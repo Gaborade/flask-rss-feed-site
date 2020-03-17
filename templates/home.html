@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Pale Dot</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>The Fiery Fiery Little Planet</h1>
+    <h2>Current Weather</h2>
+    <form>
+        <input type="text" name="city" placeholder="weather search">
+        <input type="submit" value="Submit">
+    </form>
+    <p>City: <b>{{weather.city}},{{weather.country}}</b></p>
+    <!-- &#8451; is for creating symbol for degrees celsius -->
+    <p>{{weather.description}}|{{weather.temperature}}&#8451;</p>
+    <form>
+        <input type="text" name='publication' placeholder="search">
+        <input type="submit" value="'Submit'" 
+    </form>
+      
+    <!--Double parenthesis tells HTML not to take as literal HTML code. It is -->
+    <!-- meant for Jinja Template Engine --> 
+    <!-- Items in a dictionary can be accessed in Jinja with the dot notation-->
+    {% for article in articles %}
+    <!-- looping through articles to fetch items -->
+    <b><a href="{{article.link}}">{{article.title}}</a></b> <br>
+    <i>{{article.pubDate}}</i> <br>
+    <p>{{article.description}}</p> <br>
+    <hr>
+    {% endfor %}
+</body>
+</html>  
